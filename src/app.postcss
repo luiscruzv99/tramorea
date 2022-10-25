@@ -1,0 +1,50 @@
+@import url('https://fonts.googleapis.com/css2?family=Dosis:wght@700&display=swap');
+
+/* Write your global styles here, in PostCSS syntax */
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+h1, h2, h3, h4{
+    font-family: "Dosis";
+}
+
+h1{
+    @apply text-5xl text-black-h font-bold text-center p-2
+}
+
+h2{
+    @apply text-3xl text-black-h  font-bold text-center p-2
+}
+
+h3{
+    @apply text-xl text-black-h font-bold text-center p-2
+}
+
+h4{
+    @apply text-lg text-black-h font-bold text-center p-2
+}
+
+header{
+    @apply sticky top-0 flex justify-around items-center h-20 bg-gradient-to-r to-peachpuff from-tangerine 
+}
+
+footer{
+    @apply fixed p-12 bottom-0 w-full flex flex-col justify-around items-center h-20 bg-slate-800
+}
+
+.xl-nav{
+    @apply hidden lg:flex
+}
+
+.mobile-nav{
+    @apply flex lg:hidden
+}
+
+.menu-display{
+    @apply absolute w-full z-10 left-0 pt-20 text-center bg-gradient-to-r to-peachpuff from-tangerine
+}
+
+.menu-item{
+    @apply font-bold underline text-slate-900 text-3xl p-10
+}
