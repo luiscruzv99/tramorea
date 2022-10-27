@@ -10,7 +10,11 @@ const config = {
 				'coral': '#FF8C61',
 				'tangerine': '#FAA275',
 				'peachpuff': '#F9DBBD',
-
+				'apricot': '#FFC9B5',
+				'melon': '#F7B1AB',
+				'lmerengue' : '#FAF0CA',
+				'bisque': '#FAE3C6',
+				'cpink': '#FFE6D5'
 			}
 		}
 	},
