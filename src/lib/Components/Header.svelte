@@ -1,6 +1,7 @@
 <script>
 	import { fly } from 'svelte/transition';
 	import ham from '$lib/assets/ham.svg';
+	import logo from '$lib/assets/logo.png'
 
 	let links = [
 		{ name: 'Home', link: '.' },
@@ -17,7 +18,8 @@
 </script>
 
 <header>
-	<div class="flex">
+	<div class="flex content-between">
+		<img src={logo} class=" h-16 p-2" alt=""/>
 		<h2>LuisC.dev</h2>
 	</div>
 
