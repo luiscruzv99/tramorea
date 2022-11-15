@@ -12,7 +12,7 @@
 	import svsCarr from '$lib/assets/IdxCarr/svsChat.png';
 </script>
 
-<div class="mx-5 md:mx-20 lg:mx-40 xl:mx-80">
+<div class="mx-5 md:mx-20 lg:mx-40 xl:mx-80 pb-32">
 	<CardComponent
 		titulo={'About Me'}
 		desc={Luis}
@@ -45,6 +45,15 @@
 	</section>
 
 	<hr />
-</div>
 
-<UnderConstruction />
+	<section>
+		<h1>The blog</h1>
+		<p>
+			Sometimes I feel the need to leave a written reference of something I've done or found, to use
+			it in the future. Sometimes I simply want to write about a thing that has peaked my interest
+			or about my interests and hobbies. Whatever the case may be, if you think there might be
+			something of value, don't be afraid to take a look <a href="./blog" class="page_link">here</a>
+			or check <a href="./blog" class="page_link">the last post</a> I made.
+		</p>
+	</section>
+</div>
