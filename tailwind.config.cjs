@@ -14,7 +14,10 @@ const config = {
 				'melon': '#F7B1AB',
 				'lmerengue' : '#FAF0CA',
 				'bisque': '#FAE3C6',
-				'cpink': '#FFE6D5'
+				'cpink': '#FFE6D5',
+				'fopal': '#F15946',
+				'rust': '#a63c06',
+				'borange': '#c75000'
 			}
 		}
 	},
