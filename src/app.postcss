@@ -8,22 +8,24 @@
 
 h1, h2, h3, h4{
     font-family: "Dosis", sans-serif;
+
+    @apply  text-black-h font-bold text-center p-2
 }
 
 h1{
-    @apply text-5xl text-black-h font-bold text-center p-4
+    @apply text-5xl p-4
 }
 
 h2{
-    @apply text-3xl text-black-h  font-bold text-center p-2
+    @apply text-3xl
 }
 
 h3{
-    @apply text-xl text-black-h font-bold text-center p-2
+    @apply text-xl
 }
 
 h4{
-    @apply text-lg text-black-h font-bold text-center p-2
+    @apply text-lg
 }
 
 hr{
@@ -32,7 +34,7 @@ hr{
 
 p{
     font-family: 'Quicksand', sans-serif;
-    @apply text-lg
+    @apply text-lg text-justify
 }
 
 header{
@@ -41,6 +43,10 @@ header{
 
 footer{
     @apply fixed p-12 bottom-0 w-full flex flex-col justify-around items-center h-20 bg-slate-800
+}
+
+section{
+    @apply py-4
 }
 
 .xl-nav{
@@ -58,6 +64,7 @@ footer{
 .menu-item{
     @apply font-bold underline text-slate-900 text-3xl p-10
 }
-section{
-    @apply py-4
+
+.page_link{
+    @apply font-bold underline text-fopal
 }

@@ -13,7 +13,13 @@
 </script>
 
 <div class="mx-5 md:mx-20 lg:mx-40 xl:mx-80">
-	<CardComponent titulo={'About Me'} desc={Luis} imgSrc={face} imgLink="https://github.com/luiscruzv99" />
+	<CardComponent
+		titulo={'About Me'}
+		desc={Luis}
+		imgSrc={face}
+		imgLink="https://github.com/luiscruzv99"
+	/>
+
 	<hr />
 
 	<section>
