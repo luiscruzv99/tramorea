@@ -31,7 +31,7 @@
 
 	setInterval(() => {
 		moveRight();
-	}, 10000);
+	}, 5000);
 </script>
 
 <div class="w-full flex overflow-x-hidden self-center">
