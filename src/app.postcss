@@ -1,4 +1,5 @@
 @import url('https://fonts.googleapis.com/css2?family=Dosis:wght@700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Quicksand:wght@500&display=swap');
 
 /* Write your global styles here, in PostCSS syntax */
 @tailwind base;
@@ -6,31 +7,46 @@
 @tailwind utilities;
 
 h1, h2, h3, h4{
-    font-family: "Dosis";
+    font-family: "Dosis", sans-serif;
+
+    @apply  text-black-h font-bold text-center p-2
 }
 
 h1{
-    @apply text-5xl text-black-h font-bold text-center p-2
+    @apply text-5xl p-4
 }
 
 h2{
-    @apply text-3xl text-black-h  font-bold text-center p-2
+    @apply text-3xl
 }
 
 h3{
-    @apply text-xl text-black-h font-bold text-center p-2
+    @apply text-xl
 }
 
 h4{
-    @apply text-lg text-black-h font-bold text-center p-2
+    @apply text-lg
+}
+
+hr{
+    @apply my-4 mx-auto h-2 w-24 bg-slate-700 rounded-full
+}
+
+p{
+    font-family: 'Quicksand', sans-serif;
+    @apply text-lg text-justify
 }
 
 header{
-    @apply sticky top-0 flex justify-around items-center h-20 bg-gradient-to-r to-peachpuff from-tangerine 
+    @apply sticky z-50 rounded-b-3xl top-0 flex justify-around items-center h-20 bg-gradient-to-r to-peachpuff from-tangerine 
 }
 
 footer{
     @apply fixed p-12 bottom-0 w-full flex flex-col justify-around items-center h-20 bg-slate-800
+}
+
+section{
+    @apply py-4
 }
 
 .xl-nav{
@@ -47,4 +63,8 @@ footer{
 
 .menu-item{
     @apply font-bold underline text-slate-900 text-3xl p-10
+}
+
+.page_link{
+    @apply font-bold underline text-fopal
 }
