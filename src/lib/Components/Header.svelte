@@ -5,8 +5,7 @@
     let links =[
         {name: "Home", link: "."},
         {name: "Blog", link: "./blog"},
-        {name: "Projects", link: "./projects"},
-        {name: "Contact", link: "./contact"}
+        {name: "Projects", link: "./projects"}
     ]
 
     let open = false;
