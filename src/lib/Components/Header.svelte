@@ -22,8 +22,8 @@
     </div>
     <div class="xl-nav">
         {#each links as route}
-            <a href={route.link}>
-                <h3>{route.name}</h3>
+            <a href={route.link} >
+                <h3 class=" hover:scale-125 hover:text-antigerine transition ease-in-out duration-200">{route.name}</h3>
             </a>
         {/each}
     </div>

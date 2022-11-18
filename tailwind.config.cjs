@@ -10,6 +10,7 @@ const config = {
 				'coral': '#FF8C61',
 				'tangerine': '#FAA275',
 				'peachpuff': '#F9DBBD',
+				'antigerine': '#293f98'
 
 			}
 		}
