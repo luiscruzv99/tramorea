@@ -18,6 +18,8 @@ const config = {
 				'fopal': '#F15946',
 				'rust': '#a63c06',
 				'borange': '#c75000'
+				'antigerine': '#293f98'
+
 			}
 		}
 	},
