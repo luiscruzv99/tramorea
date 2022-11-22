@@ -4,7 +4,7 @@
 	import logo from '$lib/assets/logo.png'
 
 	let links = [
-		{ name: 'Home', link: '' },
+		{ name: 'Home', link: '/' },
 		{ name: 'Blog', link: '/blog' },
 		{ name: 'Projects', link: '/projects' },
 		{ name: 'Contact', link: '/contact' }
