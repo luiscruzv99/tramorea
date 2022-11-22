@@ -5,7 +5,7 @@
 <main>
 	{#each data.tags as tag}
 		{#if tag != undefined}
-			<p>{tag}</p>
+			<p><a href="tags/{tag}">{tag}</a></p>
 		{/if}
 	{/each}
 </main>

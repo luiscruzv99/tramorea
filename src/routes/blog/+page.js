@@ -1,6 +1,6 @@
 // @ts-nocheck
-import { orderPosts} from "$lib/utils/postFetcher"
+import { lastPost } from "$lib/utils/postFetcher"
 
-export const load = async () =>{
-   return await orderPosts();
+export const load = async () => {
+   return await lastPost();
 }

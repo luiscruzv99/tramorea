@@ -39,7 +39,7 @@ export const lastPost = async () => {
 
 export const getTags = async () => {
     const { postContents } = await getPosts();
-    const tags = postContents.flatMap(a => a.meta.tags);
+    const tags = [... new Set(postContents.flatMap(a => a.meta.tags))];
 
     return { tags };
 }
@@ -48,8 +48,6 @@ export const getPostsWithTag = async (tag) => {
     const { postContents } = await getPosts();
 
     const taggedPosts = await postContents.filter(a => a.meta.tags.includes(tag))
-
-    console.log(taggedPosts)
 
     return { taggedPosts };
 
