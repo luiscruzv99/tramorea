@@ -1,6 +1,9 @@
 // @ts-nocheck
-import { lastPost } from "$lib/utils/postFetcher"
+import { getTags, lastPost } from "$lib/utils/postFetcher"
 
 export const load = async () => {
-   return await lastPost();
+   const { last } = await lastPost();
+   const { tags } = await getTags();
+
+   return {last, tags};
 }

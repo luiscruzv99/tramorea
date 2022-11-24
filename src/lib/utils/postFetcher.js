@@ -32,9 +32,9 @@ export const orderPosts = async () => {
 
 export const lastPost = async () => {
     const { orderedPosts } = await orderPosts();
-    const lastPost = orderedPosts[0];
+    const last = orderedPosts[0];
 
-    return { lastPost }
+    return { last }
 }
 
 export const getTags = async () => {

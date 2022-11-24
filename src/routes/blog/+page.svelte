@@ -1,12 +1,15 @@
 <script>
 	// @ts-nocheck
 	export let data;
-	import UnderConstruction from '$lib/components/UnderConstruction.svelte';
+	import BlogCard from '$lib/components/BlogCard.svelte';
+	import TagContainer from '$lib/components/TagContainer.svelte';
 </script>
 
-<div class="flex justify-around p-16">
-	<aside class=" hidden lg:block w-1/5 text-center my-auto">Test</aside>
-	<main class="w-3/5">
+<div class="flex justify-around p-4 md:p-8 lg:p-16">
+	<aside class=" hidden lg:block w-1/5 text-center my-auto p-8">
+		<TagContainer tags={data.tags} />
+	</aside>
+	<main class="md:3/4 lg:w-3/5">
 		<h1>The Blog™</h1>
 		<hr />
 		<p>
@@ -20,20 +23,15 @@
 			If, however, you are only interested in checking out my writing style, I recommend you to take
 			a look at my last blog entry, linked down below.
 		</p>
+		<div class="flex justify-center m-2">
+			<BlogCard blogEntry={data.last} />
+		</div>
 
-		{#if data.lastPost}
-			<p><a href={data.lastPost.path} class="page_link">{data.lastPost.meta.title}</a> - {data.lastPost.meta.date}</p>
-			{#if data.lastPost.meta.tags.length > 1}
-			<p>
-				Tags:
-				{#each data.lastPost.meta.tags as t}
-					[{t}]
-				{/each}
-			</p>
-			{/if}
-		{/if}
+		<p>
+			If you want to see all my posts, just head to my <a href="/blog/posts" class="page_link"
+				>all posts</a
+			> page, where you can find them ordered by published date.
+		</p>
 	</main>
 	<aside class="hidden lg:block w-1/5 text-center" />
 </div>
-
-<UnderConstruction />
