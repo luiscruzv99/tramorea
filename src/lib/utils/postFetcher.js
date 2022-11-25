@@ -5,7 +5,7 @@ const getPosts = async () => {
     const postContents = await Promise.all(
         postIter.map(async ([path, resolver]) => {
             const { metadata } = await resolver();
-            const postPath = './blog' + path.slice(28, -3);
+            const postPath = '/blog' + path.slice(28, -3);
 
             return {
                 meta: metadata,
