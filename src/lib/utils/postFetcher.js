@@ -47,7 +47,7 @@ export const getTags = async () => {
 export const getPostsWithTag = async (tag) => {
     const { postContents } = await getPosts();
 
-    const taggedPosts = await postContents.filter(a => a.meta.tags.includes(tag))
+    const taggedPosts = postContents.filter(a => a.meta.tags.includes(tag))
 
     return { taggedPosts };
 

@@ -2,7 +2,7 @@
 	export let tags = {};
 </script>
 
-<div class="bg-cpink rounded-lg hover:scale-105 hover:transition-all">
+<div class="bg-cpink rounded-lg hover:scale-105 hover:transition-all sticky top-32">
 	<a href="/blog/tags" >
 		<div class=" bg-coral rounded-t-lg"><h4>Tags</h4></div>
 

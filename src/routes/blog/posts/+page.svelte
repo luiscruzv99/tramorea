@@ -14,7 +14,7 @@
 		<hr />
 		<div class=" grid md:grid-cols-2">
 			{#each data.orderedPosts as post}
-				<div class="flex justify-center m-2">
+				<div class="flex justify-center">
 					<BlogCard blogEntry={post} />
 				</div>
 			{/each}
