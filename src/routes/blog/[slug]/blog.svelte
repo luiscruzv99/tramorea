@@ -1,5 +1,5 @@
 <script context="module">
-	import a from "$lib/components/blog/a.svelte"
+	import a from "$lib/Components/blog/a.svelte"
 	export { a }
 </script>
 
