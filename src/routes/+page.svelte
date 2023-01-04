@@ -1,7 +1,6 @@
 <script>
-	import UnderConstruction from '$lib/components/UnderConstruction.svelte';
-	import CardComponent from '$lib/components/CardComponent.svelte';
-	import ImgCarrousel from '$lib/components/ImgCarrousel.svelte';
+	import CardComponent from '$lib/Components/CardComponent.svelte';
+	import ImgCarrousel from '$lib/Components/ImgCarrousel.svelte';
 
 	import face from '$lib/assets/profile.jpg';
 	import Luis from '$lib/assets/Luis.txt?raw';

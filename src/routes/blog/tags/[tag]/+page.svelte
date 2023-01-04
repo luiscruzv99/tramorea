@@ -1,6 +1,6 @@
 <script>
 	export let data;
-	import BlogCard from '$lib/components/BlogCard.svelte';
+	import BlogCard from '$lib/Components/BlogCard.svelte';
 </script>
 
 <div class="flex justify-around p-4 md:p-8 lg:p-16">
