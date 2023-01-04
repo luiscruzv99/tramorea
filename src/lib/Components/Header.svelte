@@ -25,8 +25,8 @@
 
 	<div class="xl-nav">
 		{#each links as route}
-			<a href={route.link}>
-				<h3>{route.name}</h3>
+			<a href={route.link} class="header-link">
+				<h3 class="header-title">{route.name}</h3>
 			</a>
 		{/each}
 	</div>

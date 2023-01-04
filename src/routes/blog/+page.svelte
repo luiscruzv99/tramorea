@@ -6,7 +6,7 @@
 </script>
 
 <div class="flex justify-around p-4 md:p-8 lg:p-16">
-	<aside class=" hidden lg:block w-1/5 text-center my-auto p-8">
+	<aside class="hidden lg:block w-1/5 text-center my-auto p-8">
 		<TagContainer tags={data.tags} />
 	</aside>
 	<main class="md:3/4 lg:w-3/5">
