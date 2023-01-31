@@ -1,6 +1,6 @@
 ---
 title: "Changelog v0.2: The blog is here!"
-date: 12/1/2022 - 1/4/2023
+date: 1/4/2023
 tags: [changelog, coding]
 ---
 
