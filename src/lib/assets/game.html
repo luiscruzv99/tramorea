@@ -1,5 +1,7 @@
 <html>
 
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
 <style>
     canvas {
         margin: auto;
@@ -7,11 +9,17 @@
         border: 1px solid black;
         background-color: lightgreen;
     }
+
+    @media only screen and (max-width: 600px){
+    canvas{
+        width: 90vw;
+    }
+    }
 </style>
 
 
 <body>
-    <canvas id="canvas" width="1000" height="1000"> </canvas>
+    <canvas id="canvas" width="1000" height="1200"> </canvas>
 
     <script>
         let canvas = document.getElementById("canvas");
@@ -24,8 +32,8 @@
         const sprites = ['🐮', '🐭', '🐰', '🐱', '🐴', '🐶', '🐷', '🐹', '🐤', '🍰', '🎂', '🍰', '🎂', '🍰', '🎂']
 
         const enemies = ['🍰', '🎂']
-        let baseSpeed = 7
-        let maxMobs = 10
+        let baseSpeed = 3
+        let maxMobs = 3
         const rotSpeed = Math.PI / 64
 
         let objects = []
@@ -116,27 +124,35 @@
 
         }
 
-        function listen_input(e) {
-
+        function mouse(e){
             if (e.buttons == 1) {
-                const lowX = (e.clientX - rect.left - 20) * scaleX
-                const highX = (e.clientX - rect.left + 20) * scaleX
-                const lowY = (e.clientY - rect.top - 20) * scaleY
-                const highY = (e.clientY - rect.top + 20) * scaleY
+                listen_input(e.clientX, e.clientY)
+                console.log(e)
+            }
+        }
+
+        function touch(e){
+            listen_input(e.touches[0].clientX, e.touches[0].clientY)
+        }
+        
+        function listen_input(clientX, clientY) {
+
+                const lowX = (clientX - rect.left - 20) * scaleX
+                const highX = (clientX - rect.left + 20) * scaleX
+                const lowY = (clientY - rect.top - 20) * scaleY
+                const highY = (clientY - rect.top + 20) * scaleY
                 deleted = objects.filter(o => (o.posX > lowX && o.posX < highX) && (o.posY > lowY && o.posY < highY))
                 objects = objects.filter(o => (o.posX < lowX || o.posX > highX) || (o.posY < lowY || o.posY > highY))
 
                 deleted.forEach(e => {
                     if (enemies.includes(e.sprite)) {
                         score += 1
-                        baseSpeed += 2
-                        maxMobs += 2
+                        baseSpeed += 1
+                        maxMobs += 1
                     } else {
                         score -= 1
                     }
                 });
-            }
-
         }
 
         function countDown(){
@@ -144,7 +160,9 @@
         }
 
         init()
-        addEventListener("mousemove", listen_input);
+        addEventListener("mousemove", mouse);
+        addEventListener("touchmove", touch);
+
         setInterval(update, 16)
         setInterval(countDown, 1000)
         console.log(objects)
