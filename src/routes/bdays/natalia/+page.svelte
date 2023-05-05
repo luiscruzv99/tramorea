@@ -12,6 +12,12 @@
 </script>
 
 <audio src={funk} preload="auto" bind:this={tune} />
+
+<svelte:head>
+	<title>Feliz Cumple, Natalia</title>
+	<html lang="en" />
+</svelte:head>
+
 <div
 	id="container"
 	style="height: 50vh; display:flex; justify-content: center; align-content:center"
