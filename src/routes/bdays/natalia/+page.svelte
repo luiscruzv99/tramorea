@@ -16,6 +16,12 @@
 </script>
 
 <audio src={funk} preload="auto" bind:this={tune} />
+
+<svelte:head>
+	<title>Feliz Cumple, Natalia</title>
+	<html lang="en" />
+</svelte:head>
+
 <div class="flex justify-center content-center mt-4">
 	<button class="boton" on:click={mute}>Desmutéame primero</button>
 </div>

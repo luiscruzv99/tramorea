@@ -70,9 +70,3 @@ Anyways, I'll try to post content regularly on the blog so that I don't forget t
 Enjoy the rest of the day, week, month or whatever time scale you wanna use.
 
 See ya!
-
-
-
-
-
--

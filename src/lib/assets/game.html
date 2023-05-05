@@ -1,0 +1,172 @@
+<html>
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<style>
+    canvas {
+        margin: auto;
+        width: 30vw;
+        border: 1px solid black;
+        background-color: lightgreen;
+    }
+
+    @media only screen and (max-width: 600px){
+    canvas{
+        width: 90vw;
+    }
+    }
+</style>
+
+
+<body>
+    <canvas id="canvas" width="1000" height="1200"> </canvas>
+
+    <script>
+        let canvas = document.getElementById("canvas");
+        let context = canvas.getContext("2d");
+
+        const rect = canvas.getBoundingClientRect()
+        const scaleX = canvas.width / rect.width;
+        const scaleY = canvas.height / rect.height;
+
+        const sprites = ['🐮', '🐭', '🐰', '🐱', '🐴', '🐶', '🐷', '🐹', '🐤', '🍰', '🎂', '🍰', '🎂', '🍰', '🎂']
+
+        const enemies = ['🍰', '🎂']
+        let baseSpeed = 3
+        let maxMobs = 3
+        const rotSpeed = Math.PI / 64
+
+        let objects = []
+        let score = 0
+
+        let state = 0
+        let counter = 10
+
+        context.font = "80px Dosis";
+
+        function init() {
+            objects.push(new_obj())
+        }
+
+        function new_obj() {
+            return {
+                sprite: sprites[Math.floor(Math.random() * sprites.length)],
+                posX: Math.floor(Math.random() * canvas.width),
+                posY: canvas.height + 64,
+                spX: baseSpeed * ((Math.random() * 2) - 1),
+                spY: baseSpeed * ((Math.random() * 2) - 1),
+                rot: rotSpeed * ((Math.random() * 2) - 1),
+            }
+        }
+
+        function update() {
+            switch (state) {
+                case 0:
+                    context.clearRect(0, 0, canvas.width, canvas.height);
+                    context.textAlign = "center";
+                    context.textBaseline = "middle";
+                    context.fillText("Come las tartas (🎂)", 500, 250)
+                    context.fillText("Evita los animales (🐶)", 500, 350)
+                    context.fillText(counter, 500, 750)
+                    if (counter < 0 ) state = 1
+                    break;
+
+                case 1:
+                    context.clearRect(0, 0, canvas.width, canvas.height);
+                    objects.forEach(e => {
+                        context.save();
+                        context.textAlign = "center";
+                        context.textBaseline = "middle";
+                        move_sprite(e);
+                        rotate_sprite(e);
+                        context.fillText(e.sprite, 0, 0)
+                        context.restore();
+                    });
+
+                    context.fillText("Puntos: " + score, 800, 70)
+
+                    objects = objects.filter(e =>
+                        e.posX > -80 &&
+                        e.posX < canvas.width + 80 &&
+                        e.posY > -80 &&
+                        e.posY < canvas.height + 80)
+
+                    if (objects.length < maxMobs) {
+                        objects.push(new_obj())
+                    }
+
+                    if (score >= 10) {
+                        state = 2
+                    }
+                    break;
+                case 2:
+                    context.font = "64px Dosis";
+                    context.clearRect(0, 0, canvas.width, canvas.height);
+                    context.fillText("🎉🎊Feliz Cumpleaños Pau 🎊🎉", 500, 333)
+                    context.fillText("Recarga para jugar de nuevo", 500, 666)
+                    break;
+            }
+
+        }
+
+        function rotate_sprite(sprite) {
+
+            sprite.rot += rotSpeed
+            context.rotate(sprite.rot)
+
+        }
+
+        function move_sprite(sprite) {
+            sprite.posX += sprite.spX
+            sprite.posY += sprite.spY
+
+            context.translate(sprite.posX, sprite.posY)
+
+        }
+
+        function mouse(e){
+            if (e.buttons == 1) {
+                listen_input(e.clientX, e.clientY)
+                console.log(e)
+            }
+        }
+
+        function touch(e){
+            listen_input(e.touches[0].clientX, e.touches[0].clientY)
+        }
+        
+        function listen_input(clientX, clientY) {
+
+                const lowX = (clientX - rect.left - 20) * scaleX
+                const highX = (clientX - rect.left + 20) * scaleX
+                const lowY = (clientY - rect.top - 20) * scaleY
+                const highY = (clientY - rect.top + 20) * scaleY
+                deleted = objects.filter(o => (o.posX > lowX && o.posX < highX) && (o.posY > lowY && o.posY < highY))
+                objects = objects.filter(o => (o.posX < lowX || o.posX > highX) || (o.posY < lowY || o.posY > highY))
+
+                deleted.forEach(e => {
+                    if (enemies.includes(e.sprite)) {
+                        score += 1
+                        baseSpeed += 1
+                        maxMobs += 1
+                    } else {
+                        score -= 1
+                    }
+                });
+        }
+
+        function countDown(){
+            counter--;
+        }
+
+        init()
+        addEventListener("mousemove", mouse);
+        addEventListener("touchmove", touch);
+
+        setInterval(update, 16)
+        setInterval(countDown, 1000)
+        console.log(objects)
+    </script>
+</body>
+
+</html>
