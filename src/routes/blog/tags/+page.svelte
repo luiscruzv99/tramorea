@@ -2,6 +2,11 @@
 	export let data: { tags: String[] };
 </script>
 
+<svelte:head>
+	<title>Blog Tags - Luis' page</title>
+	<html lang="en" />
+</svelte:head>
+
 <main class="mx-5 md:mx-20 lg:mx-40 xl:mx-80 pb-32 pt-4">
 	<h1>All Tags</h1>
 	<hr />
