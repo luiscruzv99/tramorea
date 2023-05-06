@@ -18,7 +18,6 @@ const getPosts = async () => {
     return { postContents };
 }
 
-
 export const orderPosts = async () => {
     const { postContents } = await getPosts();
 
