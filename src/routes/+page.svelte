@@ -1,6 +1,6 @@
 <script>
-	import CardComponent from '$lib/Components/CardComponent.svelte';
-	import ImgCarrousel from '$lib/Components/ImgCarrousel.svelte';
+	import CardComponent from '$lib/components/CardComponent.svelte';
+	import ImgCarrousel from '$lib/components/ImgCarrousel.svelte';
 
 	import face from '$lib/assets/profile.jpg';
 	import Luis from '$lib/assets/Luis.txt?raw';
@@ -25,7 +25,22 @@
 	/>
 
 	<hr />
-
+	<section>
+		<a href="/blog">
+			<h1
+				class="px-4 hover:scale-110 hover:font-bold hover:text-fopal transition ease-in-out duration-200"
+			>
+				The blog
+			</h1>
+		</a>
+		<p>
+			Sometimes I feel the need to leave a written reference of something I've done or found, to use
+			it in the future. Sometimes I simply want to write about a thing that has peaked my interest
+			or about my interests and hobbies. Whatever the case may be, if you think there might be
+			something of value, don't be afraid to take a look <a href="./blog" class="page_link">here</a>
+			or check <a href="./blog" class="page_link">the last post</a> I made.
+		</p>
+	</section>
 	<section>
 		<h1>My Projects</h1>
 		<p class="p-4">
@@ -49,15 +64,4 @@
 	</section>
 
 	<hr />
-
-	<section>
-		<h1>The blog</h1>
-		<p>
-			Sometimes I feel the need to leave a written reference of something I've done or found, to use
-			it in the future. Sometimes I simply want to write about a thing that has peaked my interest
-			or about my interests and hobbies. Whatever the case may be, if you think there might be
-			something of value, don't be afraid to take a look <a href="./blog" class="page_link">here</a>
-			or check <a href="./blog" class="page_link">the last post</a> I made.
-		</p>
-	</section>
 </div>
