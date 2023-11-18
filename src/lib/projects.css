@@ -1,0 +1,12 @@
+#projects-container{
+    padding-left: 4rem;
+    padding-right: 4rem;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-gap: 10px;
+    grid-auto-rows: minmax(100px, auto);
+}
+
+.desc{
+    display: none;
+}
