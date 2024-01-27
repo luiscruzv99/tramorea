@@ -1,4 +1,4 @@
-I'm a software engineer based in Santander, currently finishing my masters in computing engineering.
+I'm a software engineer from Santander, with a masters in computing engineering, currently working @Wejyc (Madrid).
 I really enjoy web technologies, AI, and anything coding related. So much so that I created this page, to be able to showcase my side projects. 
-In the past I have worked with several languages, like Java, Python, C or JS/TS, but I'm always looking to expand my knowledge in computer science. If you feel curious and want to learn more, you can visit my github profile by clicking my picture.
+In the past I work with several languages, like Java, Python, C or JS/TS, but I'm always looking to expand my knowledge in computer science. If you feel curious and want to learn more, you can visit my github profile by clicking my picture.
 Thank you for visiting and enjoy your stay😊
