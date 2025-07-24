@@ -35,9 +35,9 @@ hr {
 	@apply my-4 mx-auto h-2 w-24 bg-slate-700 rounded-full;
 }
 
-p {
-	font-family: 'Quicksand', sans-serif;
-	@apply text-lg text-justify;
+p{
+    font-family: 'Quicksand', sans-serif;
+    @apply text-lg text-justify p-2
 }
 
 header {
@@ -52,8 +52,12 @@ section {
 	@apply py-4;
 }
 
-.xl-nav {
-	@apply hidden lg:flex;
+a, .header-link{
+    @apply no-underline text-stone-900
+}
+
+.xl-nav{
+    @apply hidden lg:flex 
 }
 
 .mobile-nav {
@@ -70,4 +74,14 @@ section {
 
 .page_link {
 	@apply font-bold underline text-fopal;
+}
+
+.tag_link{
+    font-family: 'Quicksand', sans-serif;
+    @apply p-1 m-1 lg:p-2 lg:mx-2 hover:bg-rust hover:text-white hover:transition-colors hover:font-bold rounded-full bg-slate-100 text-slate-800 !important
+}
+
+.tag_link_big{
+    font-family: 'Quicksand', sans-serif;
+    @apply  no-underline text-xl p-1 m-1 lg:p-2 lg:mx-2 hover:bg-rust hover:text-white hover:transition-colors hover:font-bold rounded-full bg-slate-100 text-slate-800
 }
