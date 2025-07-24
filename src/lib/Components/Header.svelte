@@ -17,10 +17,10 @@
 </script>
 
 <header>
-	<div class="flex">
+	<div class="flex content-between">
         <a href="/" class="hover:scale-110 hover:font-bold transition ease-in-out duration-200 flex">
 		<img src={logo} class=" h-16 p-2" alt=""/>
-		<h2>LuisC.dev</h2>
+		<h2>LuVa.dev</h2>
         </a>
 	</div>
 	<div class="xl-nav">
