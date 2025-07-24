@@ -6,7 +6,7 @@
 @tailwind components;
 @tailwind utilities;
 
-h1, h2, h3, h4{
+h1, h2, h3, h4, .header-title, .tag-title{
     font-family: "Dosis", sans-serif;
 
     @apply  text-black-h font-bold text-center p-2
@@ -34,7 +34,7 @@ hr{
 
 p{
     font-family: 'Quicksand', sans-serif;
-    @apply text-lg text-justify
+    @apply text-lg text-justify p-2
 }
 
 header{
@@ -49,8 +49,12 @@ section{
     @apply py-4
 }
 
+a, .header-link{
+    @apply no-underline text-stone-900
+}
+
 .xl-nav{
-    @apply hidden lg:flex
+    @apply hidden lg:flex 
 }
 
 .mobile-nav{
@@ -58,7 +62,7 @@ section{
 }
 
 .menu-display{
-    @apply absolute w-full z-10 left-0 pt-20 text-center bg-gradient-to-r to-peachpuff from-tangerine
+    @apply absolute w-full z-10 left-0 top-0 text-center bg-gradient-to-r to-peachpuff from-tangerine
 }
 
 .menu-item{
@@ -78,9 +82,3 @@ section{
     font-family: 'Quicksand', sans-serif;
     @apply  no-underline text-xl p-1 m-1 lg:p-2 lg:mx-2 hover:bg-rust hover:text-white hover:transition-colors hover:font-bold rounded-full bg-slate-100 text-slate-800
 }
-
-.boton{
-    font-family: 'Dosis';
-    @apply bg-fopal rounded-3xl p-2 text-white text-xl
-}
-
