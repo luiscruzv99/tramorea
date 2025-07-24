@@ -1,4 +1,4 @@
-I'm a software engineer based in Santander, currently finishing my masters in computing engineering.
-I really enjoy web technologies, AI, and anything coding related. So much so that I created this page, to be able to showcase my side projects. 
-In the past I have worked with several languages, like Java, Python, C or JS/TS, but I'm always looking to expand my knowledge in computer science. If you feel curious and want to learn more, you can visit my github profile by clicking my picture.
-Thank you for visiting and enjoy your stay😊
+I'm a software engineer based in Santander, and I just finished my masters in computing engineering!
+I really enjoy web technologies, AI, and anything coding related. So much so that I created this page, to be able to showcase my side projects and write about the things I learn and find interesting. 
+In the past I have worked with several languages, like Java, Python, Golang, C or JS/TS; and frameworks, like pytorch and tensorflow, firebase or springboot; but I'm always looking to expand my knowledge in coding and computer science. If you feel curious and want to learn more, you can visit my github profile by clicking my picture. You can also checkout my projects displayed down below or read what I've been up to in my blog.
+Thank you for visiting and enjoy your stay 😊
