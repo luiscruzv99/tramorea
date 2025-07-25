@@ -1,0 +1,21 @@
+name: Build and deploy the site
+run-name: Publish site changes
+on: 
+  push:
+    branches:
+    - 'master'
+jobs:
+  Publish-Site:
+    runs-on: ubuntu-latest
+    steps:
+      - mkdir ~/.ssh && echo ${{ secrets.DEPLOY_SECRET }} >> ~/.ssh/id_ed25519
+      - sudo apt update && sudo apt install -y git yarn npm nodejs
+      - git pull git@github.com:luiscruzv99/tramorea.git
+      - git pull git@github.com:luiscruzv99/luiscruzv99.github.io.git
+      - cd tramorea
+      - yarn install && yarn build
+      - /bin/cp -rf build/* ../luiscruzv99.github.io/
+      - cd ../luiscruzv99.github.io
+      - git add *
+      - git commit -m "${{ github.event.head_commit.message }}"
+      - git push
