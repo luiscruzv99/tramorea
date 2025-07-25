@@ -8,7 +8,10 @@ jobs:
   Publish-Site:
     runs-on: ubuntu-latest
     steps:
-      - mkdir ~/.ssh && echo ${{ secrets.DEPLOY_SECRET }} >> ~/.ssh/id_ed25519
+      - name: "Setear secretos"
+        env:
+          DEPLOY_SECRET: ${{ secrets.DEPLOY_SECRET }} 
+        run: mkdir ~/.ssh && echo $DEPLOY_SECRET >> ~/.ssh/id_ed25519
       - sudo apt update && sudo apt install -y git yarn npm nodejs
       - git pull git@github.com:luiscruzv99/tramorea.git
       - git pull git@github.com:luiscruzv99/luiscruzv99.github.io.git
