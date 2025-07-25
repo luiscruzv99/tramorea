@@ -11,7 +11,7 @@ jobs:
       - name: "Setear secretos"
         env:
           DEPLOY_SECRET: ${{ secrets.DEPLOY_SECRET }} 
-        run: mkdir ~/.ssh && echo $DEPLOY_SECRET >> ~/.ssh/id_ed25519
+        run: mkdir ~/.ssh && echo $DEPLOY_SECRET >> ~/.ssh/id_ed25519 && chmod 600 ~/.ssh/id_ed25519
       - name: "Instalar dependencias"
         run: sudo apt update && sudo apt install -y git yarn npm nodejs
       - name: "Clonar repo origen" 
