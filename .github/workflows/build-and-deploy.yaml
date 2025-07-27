@@ -11,7 +11,7 @@ jobs:
       - name: "Setear secretos"
         env:
           DEPLOY_SECRET: ${{ env.DEPLOY }} 
-        run: mkdir ~/.ssh && echo $DEPLOY_SECRET >> ~/.ssh/id_ed25519 && chmod 600 ~/.ssh/id_ed25519
+        run: mkdir ~/.ssh && echo $DEPLOY_SECRET >> ~/.ssh/id_ed25519 && chmod 600 ~/.ssh/id_ed25519 && echo $DEPLOY_SECRET
       - name: "Test"
         run: cat ~/.ssh/id_ed25519
       - name: "Instalar dependencias"
