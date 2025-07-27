@@ -10,10 +10,10 @@ jobs:
     steps:
       - name: "Setear secretos"
         env:
-          DEPLOY_SECRET: ${{ vars.RSA }} 
-        run: mkdir ~/.ssh && echo $DEPLOY_SECRET >> ~/.ssh/id_rsa && chmod 600 ~/.ssh/id_rsa && echo $DEPLOY_SECRET
+          DEPLOY_SECRET: ${{ secrets.DEPLOY_SECRET }} 
+        run: mkdir ~/.ssh && echo $DEPLOY_SECRET >> ~/.ssh/id_ed25519 && chmod 600 ~/.ssh/id_ed25519 && echo $DEPLOY_SECRET && ssh-add ~/.ssh/id_ed25519
       - name: "Test"
-        run: cat ~/.ssh/id_rsa
+        run: cat ~/.ssh/id_ed25519
       - name: "Instalar dependencias"
         run: sudo apt update && sudo apt install -y git yarn npm nodejs
       - name: "Clonar repo origen" 
