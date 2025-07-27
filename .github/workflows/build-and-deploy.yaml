@@ -10,7 +10,7 @@ jobs:
     steps:
       - name: "Setear secretos"
         env:
-          DEPLOY_SECRET: ${{ secrets.DEPLOY_SECRET }} 
+          DEPLOY_SECRET: ${{ secrets.SECRET }} 
         run: mkdir ~/.ssh && echo $DEPLOY_SECRET >> ~/.ssh/id_ed25519 && chmod 600 ~/.ssh/id_ed25519
       - name: "Test"
         run: cat ~/.ssh/id_ed25519
