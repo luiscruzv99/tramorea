@@ -28,7 +28,7 @@ jobs:
       - name: "Clonar repo destino"
         run: cd .. && git clone git@github.com:luiscruzv99/luiscruzv99.github.io.git 
       - name: "Copiar artefactos"
-        run: ls && /bin/cp -rf build/* ../../luiscruzv99.github.io/
+        run: ls && /bin/cp -rf build/* ../luiscruzv99.github.io/
       - name: "Preparar commit"
         run: cd ../luiscruzv99.github.io && git add *
       - name: "Comitear"
