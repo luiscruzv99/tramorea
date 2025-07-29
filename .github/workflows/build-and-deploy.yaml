@@ -22,13 +22,13 @@ jobs:
           ssh-add ~/.ssh/id_rsa &&
           echo "Host *\\n\\tStrictHostKeyChecking no\\n\\n" > ~/.ssh/config
       - name: "Clonar repo origen"
-        run: git clone git@github.com:luiscruzv99/tramorea.git && cd tramorea
+        run: git clone git@github.com:luiscruzv99/tramorea.git
       - name: "Compilar proyecto"
-        run: ls && ls .. && yarn install && yarn build
+        run: cd tramorea && ls && ls .. && yarn install && yarn build
       - name: "Clonar repo destino"
-        run: cd .. && git clone git@github.com:luiscruzv99/luiscruzv99.github.io.git && cd tramorea
+        run: cd .. && git clone git@github.com:luiscruzv99/luiscruzv99.github.io.git 
       - name: "Copiar artefactos"
-        run: /bin/cp -rf build/* ../luiscruzv99.github.io/
+        run: cd tramorea/tramorea && ls && /bin/cp -rf build/* ../../luiscruzv99.github.io/
       - name: "Ir a repo destino"
         run: cd ../luiscruzv99.github.io
       - name: "Preparar commit"
