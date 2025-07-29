@@ -3,7 +3,7 @@
 	import CardComponent from '$lib/components/cardComponent.svelte';
 
 	import face from '$lib/assets/profile.jpg';
-	import Luis from '$lib/assets/luis.txt?raw';
+	import Luis from '$lib/assets/Luis.txt?raw';
 </script>
 
 <svelte:head>
