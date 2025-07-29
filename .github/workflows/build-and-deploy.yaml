@@ -14,12 +14,13 @@ jobs:
         env:
           DEPLOY_SECRET: ${{ vars.RSA }} 
         run: |
-          mkdir ~/.ssh && 
+          mkdir -p ~/.ssh && 
           echo $DEPLOY_SECRET > ~/.ssh/id_rsa &&
           chmod 400 ~/.ssh/id_rsa && 
-          echo $DEPLOY_SECRET && 
+          cat ~/.ssh/id_rsa && 
           eval `ssh-agent -s` &&
-          ssh-add ~/.ssh/id_rsa
+          ssh-add ~/.ssh/id_rsa &&
+          echo "Host *\\n\\tStrictHostKeyChecking no\\n\\n" > /home/runner/.ssh/config
       - name: "Test"
         run: cat ~/.ssh/id_rsa
       - name: "Clonar repo origen" 
