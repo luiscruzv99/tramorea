@@ -1,6 +1,6 @@
 <script>
 	export let data;
-	import BlogCard from '$lib/Components/BlogCard.svelte';
+	import BlogCard from '$lib/components/blogCard.svelte';
 </script>
 
 <svelte:head>

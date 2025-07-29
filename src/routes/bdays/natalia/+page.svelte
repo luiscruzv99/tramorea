@@ -1,14 +1,18 @@
-<script lang="ts">
+<script>
 	import funk from '$lib/assets/funkeToun.mp3';
 	import fishe from '$lib/assets/fish-spinning.gif';
 	import { onMount } from 'svelte';
-
-	let tune: HTMLAudioElement;
+	let tune;
 
 	onMount(() => {
+		document.body.addEventListener;
+		tune.autoplay = true;
 		tune.loop = true;
-		tune.play();
 	});
+
+	function mute() {
+		tune.play();
+	}
 </script>
 
 <audio src={funk} preload="auto" bind:this={tune} />
@@ -18,16 +22,20 @@
 	<html lang="en" />
 </svelte:head>
 
+<div class="flex justify-center content-center mt-4">
+	<button class="boton" on:click={mute}>Desmutéame primero</button>
+</div>
 <div
 	id="container"
 	style="height: 50vh; display:flex; justify-content: center; align-content:center"
 >
 	<div class="movimiento" style="padding: 25vh 5vh; display:flex">
 		<img src={fishe} alt="" style="height: 8rem; display:inline" />
-		<h1>🎉🎊🎉🎊Feliz cumpleaños natalia 🎊🎉🎊🎉</h1>
+		<h1>🎉🎊🎉🎊Feliz cumpleaños Natalia 🎊🎉🎊🎉</h1>
 		<img src={fishe} alt="" style="height: 8rem; display:inline" />
 	</div>
 </div>
+
 <h2>
 	&gt&gt Pulsa <a
 		class="page_link"

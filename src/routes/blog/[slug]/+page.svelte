@@ -1,6 +1,6 @@
 <script>
 	// @ts-nocheck
-	import TagContainer from '$lib/Components/TagContainer.svelte';
+	import TagContainer from '$lib/components/tagContainer.svelte';
 	export let data;
 	const { title, date, tags, content } = data;
 </script>

@@ -1,8 +1,8 @@
 <script>
 	// @ts-nocheck
 	export let data;
-	import BlogCard from '$lib/Components/BlogCard.svelte';
-	import TagContainer from '$lib/Components/TagContainer.svelte';
+	import BlogCard from '$lib/components/blogCard.svelte';
+	import TagContainer from '$lib/components/tagContainer.svelte';
 </script>
 
 <svelte:head>

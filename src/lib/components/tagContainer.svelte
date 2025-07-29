@@ -1,5 +1,5 @@
-<script>
-	export let tags = {};
+<script lang=ts>
+	export let tags:any[] = [];
 </script>
 
 <div class="bg-cpink rounded-lg hover:scale-105 hover:transition-all sticky top-32">
