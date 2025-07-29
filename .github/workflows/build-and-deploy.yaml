@@ -12,15 +12,15 @@ jobs:
         run: sudo apt update && sudo apt install -y git yarn npm nodejs
       - name: "Setear secretos"
         env:
-          DEPLOY_SECRET: ${{ vars.RSA }} 
+          DEPLOY_SECRET: ${{ secrets.SECRET }} 
         run: |
           mkdir -p ~/.ssh && 
-          echo $DEPLOY_SECRET > ~/.ssh/id_rsa &&
+          echo "$DEPLOY_SECRET" > ~/.ssh/id_rsa &&
           chmod 400 ~/.ssh/id_rsa && 
           cat ~/.ssh/id_rsa && 
           eval `ssh-agent -s` &&
           ssh-add ~/.ssh/id_rsa &&
-          echo "Host *\\n\\tStrictHostKeyChecking no\\n\\n" > /home/runner/.ssh/config
+          echo "Host *\\n\\tStrictHostKeyChecking no\\n\\n" > ~/.ssh/config
       - name: "Test"
         run: cat ~/.ssh/id_rsa
       - name: "Clonar repo origen" 
