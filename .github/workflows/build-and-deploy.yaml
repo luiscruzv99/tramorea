@@ -21,6 +21,8 @@ jobs:
           eval `ssh-agent -s` &&
           ssh-add ~/.ssh/id_rsa &&
           echo "Host *\\n\\tStrictHostKeyChecking no\\n\\n" > ~/.ssh/config
+      - name: "Clonar repo origen"
+        run: git clone git@github.com:luiscruzv99/tramorea.git && cd tramorea
       - name: "Compilar proyecto"
         run: ls && ls .. && yarn install && yarn build
       - name: "Clonar repo destino"
