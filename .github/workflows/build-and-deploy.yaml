@@ -8,28 +8,27 @@ jobs:
   Publish-Site:
     runs-on: ubuntu-latest
     steps:
-      - name: "Instalar dependencias"
+      - name: "Install dependencies"
         run: sudo apt update && sudo apt install -y git yarn npm nodejs
-      - name: "Setear secretos"
+      - name: "Prepare environment"
         env:
-          DEPLOY_SECRET: ${{ secrets.SECRET }} 
+          DEPLOY_SECRET: ${{ secrets.DEPLOY_SECRET }} 
         run: |
           mkdir -p ~/.ssh && 
           echo "$DEPLOY_SECRET" > ~/.ssh/id_rsa &&
           chmod 400 ~/.ssh/id_rsa && 
-          cat ~/.ssh/id_rsa && 
           eval `ssh-agent -s` &&
           ssh-add ~/.ssh/id_rsa &&
           echo "Host *\\n\\tStrictHostKeyChecking no\\n\\n" > ~/.ssh/config
-      - name: "Clonar repo origen"
+      - name: "Clone repo"
         run: cd .. && rm -rf tramorea && git clone git@github.com:luiscruzv99/tramorea.git
-      - name: "Compilar proyecto"
-        run: ls && ls .. && yarn install && yarn build
-      - name: "Clonar repo destino"
+      - name: "Build site"
+        run: yarn install && yarn build
+      - name: "Clone site"
         run: cd .. && git clone git@github.com:luiscruzv99/luiscruzv99.github.io.git 
-      - name: "Copiar artefactos"
-        run: ls && /bin/cp -rf build/* ../luiscruzv99.github.io/
-      - name: "Desplegar cambios"
+      - name: "Copy built artifacts"
+        run: /bin/cp -rf build/* ../luiscruzv99.github.io/
+      - name: "Deploy changes"
         run: |
           cd ../luiscruzv99.github.io &&
           git config user.email "luiscruzv99@gmail.com" &&
