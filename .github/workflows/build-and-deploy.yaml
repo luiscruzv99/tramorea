@@ -18,6 +18,7 @@ jobs:
           echo $DEPLOY_SECRET > ~/.ssh/id_rsa &&
           chmod 400 ~/.ssh/id_rsa && 
           echo $DEPLOY_SECRET && 
+          eval `ssh-agent -s` &&
           ssh-add ~/.ssh/id_rsa
       - name: "Test"
         run: cat ~/.ssh/id_rsa
