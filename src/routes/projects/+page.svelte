@@ -1,8 +1,8 @@
 <script type="ts">
 	import { onMount } from 'svelte';
 	import '$lib/projects.css';
-	import '$lib/components/CardComponent.svelte';
-	import CardComponent from '$lib/components/CardComponent.svelte';
+	import '$lib/components/cardComponent.svelte';
+	import CardComponent from '$lib/components/cardComponent.svelte';
 
 	//TODO: hacer que cuando clicko en un elemento, salga por pantalla su id
 	onMount(() => {

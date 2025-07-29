@@ -1,6 +1,6 @@
 <script>
 	import '$lib/home.css'
-	import CardComponent from '$lib/components/CardComponent.svelte';
+	import CardComponent from '$lib/components/cardComponent.svelte';
 
 	import face from '$lib/assets/profile.jpg';
 	import Luis from '$lib/assets/Luis.txt?raw';
