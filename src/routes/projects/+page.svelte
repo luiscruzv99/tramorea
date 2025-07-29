@@ -7,9 +7,6 @@
 	//TODO: hacer que cuando clicko en un elemento, salga por pantalla su id
 	onMount(() => {
 		let test = document.getElementById('test');
-		function click(id: string) {
-			console.log(id);
-		}
 	});
 </script>
 
