@@ -21,16 +21,10 @@ jobs:
           eval `ssh-agent -s` &&
           ssh-add ~/.ssh/id_rsa &&
           echo "Host *\\n\\tStrictHostKeyChecking no\\n\\n" > ~/.ssh/config
-      - name: "Test"
-        run: cat ~/.ssh/id_rsa
-      - name: "Clonar repo origen" 
-        run: git clone git@github.com:luiscruzv99/tramorea.git
-      - name: "Clonar repo destino"
-        run: git clone git@github.com:luiscruzv99/luiscruzv99.github.io.git
-      - name: "Ir a repo de origen"
-        run: cd tramorea
       - name: "Compilar proyecto"
         run: yarn install && yarn build
+      - name: "Clonar repo destino"
+        run: cd .. && git clone git@github.com:luiscruzv99/luiscruzv99.github.io.git && cd tramorea
       - name: "Copiar artefactos"
         run: /bin/cp -rf build/* ../luiscruzv99.github.io/
       - name: "Ir a repo destino"
