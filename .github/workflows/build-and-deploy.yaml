@@ -8,24 +8,27 @@ jobs:
   Publish-Site:
     runs-on: ubuntu-latest
     steps:
-      - name: "Setear secretos"
-        env:
-          DEPLOY_SECRET: ${{ env.DEPLOY }} 
-        run: mkdir ~/.ssh && echo $DEPLOY_SECRET >> ~/.ssh/id_ed25519 && chmod 600 ~/.ssh/id_ed25519 && echo $DEPLOY_SECRET
-      - name: "Test"
-        run: cat ~/.ssh/id_ed25519
       - name: "Instalar dependencias"
         run: sudo apt update && sudo apt install -y git yarn npm nodejs
-      - name: "Clonar repo origen" 
+      - name: "Setear secretos"
+        env:
+          DEPLOY_SECRET: ${{ secrets.SECRET }} 
+        run: |
+          mkdir -p ~/.ssh && 
+          echo "$DEPLOY_SECRET" > ~/.ssh/id_rsa &&
+          chmod 400 ~/.ssh/id_rsa && 
+          cat ~/.ssh/id_rsa && 
+          eval `ssh-agent -s` &&
+          ssh-add ~/.ssh/id_rsa &&
+          echo "Host *\\n\\tStrictHostKeyChecking no\\n\\n" > ~/.ssh/config
+      - name: "Clonar repo origen"
         run: git clone git@github.com:luiscruzv99/tramorea.git
-      - name: "Clonar repo destino"
-        run: git clone git@github.com:luiscruzv99/luiscruzv99.github.io.git
-      - name: "Ir a repo de origen"
-        run: cd tramorea
       - name: "Compilar proyecto"
-        run: yarn install && yarn build
+        run: cd tramorea && ls && ls .. && yarn install && yarn build
+      - name: "Clonar repo destino"
+        run: cd .. && git clone git@github.com:luiscruzv99/luiscruzv99.github.io.git 
       - name: "Copiar artefactos"
-        run: /bin/cp -rf build/* ../luiscruzv99.github.io/
+        run: cd tramorea/tramorea && ls && /bin/cp -rf build/* ../../luiscruzv99.github.io/
       - name: "Ir a repo destino"
         run: cd ../luiscruzv99.github.io
       - name: "Preparar commit"
